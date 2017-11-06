@@ -42,17 +42,18 @@ with describe('Fizzbuzz'):
 
 #            expect(result).to(equal('FizzBuzz'))
 
-    with context ('When number is divisible by 3 and not by 5'):
-        with it('Returns Fizz'):
-            numbers = [6, 9, 12]
+    with context ('When number is divisible by 3'):
+        with context('and not by 5'):
+            with it('Returns Fizz'):
+                numbers = [6, 9, 12]
 
-            for number in numbers:
-                result = fizzbuzz(number)
+                for number in numbers:
+                    result = fizzbuzz(number)
 
-                expect(result).to(equal('Fizz'))
+                    expect(result).to(equal('Fizz'))
 
     with context ('When number is divisible by 5 and not by 3'):
-        with it('Returns Fizz'):
+        with it('Returns Buzz'):
             numbers = [5, 10, 20, 100]
 
             for number in numbers:
@@ -68,6 +69,7 @@ with describe('Fizzbuzz'):
                 result = fizzbuzz(number)
 
                 expect(result).to(equal('FizzBuzz'))
+
     with context ('When is not divisible for 3 or 5 or 7'):
         with it('Returns the number'):
             numbers = [1,2,4]
@@ -85,6 +87,7 @@ with describe('Fizzbuzz'):
                 result = fizzbuzz(number)
 
                 expect(result).to(equal('Woof'))
+
     with context ('When number contains a 3'):
         with it('Returns Fizz'):
             numbers = [3,13,23,30,33,43,53,63,73,83,93]
